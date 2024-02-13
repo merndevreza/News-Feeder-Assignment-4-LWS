@@ -1,12 +1,14 @@
- 
+import Page from "./Page";
+import NewsDataProvider from "./providers/NewsDataProvider";
 
-function App() { 
-
+function App() {
   return (
-    <> 
-      <h1>Vite + React</h1> 
+    <>
+    <NewsDataProvider>
+      <Page />
+    </NewsDataProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
