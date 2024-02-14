@@ -2,7 +2,7 @@ import getDate from "../../utils/getDate";
 import clockIcon from "../../assets/icons/clock.svg";
 
 const NewsCardRight = ({ news, index }) => {
-  const { url, title, description, urlToImage, publishedAt, content } = news;
+  const { url, title, description, urlToImage, publishedAt } = news;
   return (
     <>
       {index === 0 && (
@@ -17,7 +17,7 @@ const NewsCardRight = ({ news, index }) => {
               </h3>
             </a>
             <p className="text-base text-[#5C5955]">
-              {description ? description : content}
+              {description}
             </p>
             <div className="mt-5 text-base flex gap-1 text-[#5C5955]">
               <img className="w-[16px]" src={clockIcon} alt="" />
@@ -34,9 +34,7 @@ const NewsCardRight = ({ news, index }) => {
                 {title}
               </h3>
             </a>
-            <p className="text-base text-[#5C5955]">
-              {description ? description : content}
-            </p>
+            <p className="text-base text-[#5C5955]">{description}</p>
             <div className="mt-5 text-base flex gap-1 text-[#5C5955]">
               <img className="w-[16px]" src={clockIcon} alt="" />
               {getDate(publishedAt)}

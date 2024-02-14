@@ -1,27 +1,48 @@
+import { useContext } from "react";
+import { NewsContext } from "../../contexts";
+
 const Categories = () => {
+  const { setCategory } = useContext(NewsContext);
+  const handleCategory = (category) => {
+    setCategory(category);
+  };
   return (
     <nav className=" mt-6 bg-slate-100">
       <ul className="flex flex-wrap items-center justify-center gap-5 text-xs font-semibold lg:text-base py-3 ">
         <li>
-          <a href="#">General</a>
+          <a onClick={() => handleCategory("general")} href="#">
+            General
+          </a>
         </li>
         <li>
-          <a href="#">Business</a>
+          <a onClick={() => handleCategory("business")} href="#">
+            Business
+          </a>
         </li>
         <li>
-          <a href="#">Entertainment</a>
+          <a onClick={() => handleCategory("entertainment")} href="#">
+            Entertainment
+          </a>
         </li>
         <li>
-          <a href="#">Health</a>
+          <a onClick={() => handleCategory("health")} href="#">
+            Health
+          </a>
         </li>
         <li>
-          <a href="#">Science</a>
+          <a onClick={() => handleCategory("science")} href="#">
+            Science
+          </a>
         </li>
         <li>
-          <a href="#">Sports</a>
+          <a onClick={() => handleCategory("sports")} href="#">
+            Sports
+          </a>
         </li>
         <li>
-          <a href="#">Technology</a>
+          <a onClick={() => handleCategory("technology")} href="#">
+            Technology
+          </a>
         </li>
       </ul>
     </nav>

@@ -3,8 +3,8 @@ import { NewsContext } from "../contexts";
 import useNewsData from "../hooks/useNewsData";
 
 const NewsDataProvider = ({ children }) => {
-  const { newsData, loading, error } = useNewsData();
-  const [category, setCategory] = useState("general");
+  const [category, setCategory] = useState("general"); 
+  const { newsData, loading, error } = useNewsData(category);
   return (
     <NewsContext.Provider
       value={{ newsData, loading, error, category, setCategory }}

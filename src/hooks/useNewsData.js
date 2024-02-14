@@ -14,7 +14,7 @@ const useNewsData = (category) => {
         ...loading,
         state: true,
         message: "Calling Fetch API...",
-      }); 
+      });
       const response = await fetch(
         `http://localhost:8000/v2/top-headlines?category=${category}`
       );
@@ -23,12 +23,12 @@ const useNewsData = (category) => {
         throw new Error(errorMessage);
       }
       const data = await response.json();
-      
+
       //shortByDate(latest first)
       let sortByDate = [...data.articles];
       sortByDate.sort(
         (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
-      ); 
+      );
       setNewsData([...sortByDate]);
     } catch (error) {
       setError(error.message);
@@ -45,8 +45,8 @@ const useNewsData = (category) => {
       state: true,
       message: "Fetching data...",
     });
-    fetchNewsData("general");
-  }, []);
+    fetchNewsData(category);
+  }, [category]);
   return {
     newsData,
     loading,

@@ -2,7 +2,7 @@ import getDate from "../../utils/getDate";
 import clockIcon from "../../assets/icons/clock.svg";
 
 const NewsCardLeft = ({ news, index }) => {
-  const { author, url, title, description, urlToImage, publishedAt, content } =
+  const { author, url, title, description, urlToImage, publishedAt } =
     news;
   return (
     <>
@@ -15,7 +15,7 @@ const NewsCardLeft = ({ news, index }) => {
               </h3>
             </a>
             <p className="text-base text-[#5C5955]">
-              {description ? description : content}
+            {description}
             </p>
             <div className="mt-5 text-base flex gap-1 text-[#5C5955]">
               <img className="w-[16px]" src={clockIcon} alt="" />
@@ -41,8 +41,7 @@ const NewsCardLeft = ({ news, index }) => {
                 {title}
               </h3>
             </a>
-            <p className="text-base text-[#5C5955]">
-              {description ? description : content}
+            <p className="text-base text-[#5C5955]">{description}
             </p>
             <div className="mt-5 text-base flex gap-1 text-[#5C5955]">
               <img className="w-[16px]" src={clockIcon} alt="" />
@@ -54,7 +53,7 @@ const NewsCardLeft = ({ news, index }) => {
           </div>
         </div>
       )}
-      {index > 1 && index < 9 && (
+      {index > 1 && (
         <div className="col-span-12 md:col-span-6 lg:col-span-4">
           <div className="col-span-12 md:col-span-4">
             <a href={url}>
@@ -62,8 +61,7 @@ const NewsCardLeft = ({ news, index }) => {
                 {title}
               </h3>
             </a>
-            <p className="text-base text-[#5C5955]">
-              {description ? description : content}
+            <p className="text-base text-[#5C5955]">{description}
             </p>
 
             <div className="mt-5 text-base flex gap-1 text-[#5C5955]">
