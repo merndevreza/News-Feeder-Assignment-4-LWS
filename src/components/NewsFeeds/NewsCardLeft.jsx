@@ -1,8 +1,7 @@
-import getDate from "../../utils/getDate";
-import clockIcon from "../../assets/icons/clock.svg";
+import getDate from "../../utils/getDate"; 
 
 const NewsCardLeft = ({ news, index }) => {
-  const { author, url, title, description, urlToImage, publishedAt } =
+  const { author, url, title, description, urlToImage, publishedAt,content } =
     news;
   return (
     <>
@@ -15,12 +14,11 @@ const NewsCardLeft = ({ news, index }) => {
               </h3>
             </a>
             <p className="text-base text-[#5C5955]">
-            {description}
+            {content}
             </p>
-            <div className="mt-5 text-base flex gap-1 text-[#5C5955]">
-              <img className="w-[16px]" src={clockIcon} alt="" />
+            <p className="mt-5 text-base  text-[#5C5955]"> 
               {getDate(publishedAt)}
-            </div>
+            </p>
           </div>
 
           {urlToImage && (
@@ -43,10 +41,9 @@ const NewsCardLeft = ({ news, index }) => {
             </a>
             <p className="text-base text-[#5C5955]">{description}
             </p>
-            <div className="mt-5 text-base flex gap-1 text-[#5C5955]">
-              <img className="w-[16px]" src={clockIcon} alt="" />
+            <p className="mt-5 text-base  text-[#5C5955]"> 
               {getDate(publishedAt)}
-            </div>
+            </p>
           </div>
           <div className="col-span-12 md:col-span-6">
             <img className="w-full" src={urlToImage} alt="thumb" />
@@ -63,11 +60,9 @@ const NewsCardLeft = ({ news, index }) => {
             </a>
             <p className="text-base text-[#5C5955]">{description}
             </p>
-
-            <div className="mt-5 text-base flex gap-1 text-[#5C5955]">
-              <img className="w-[16px]" src={clockIcon} alt="" />
+            <p className="mt-5 text-base text-[#5C5955]"> 
               {getDate(publishedAt)}
-            </div>
+            </p>
           </div>
         </div>
       )}
