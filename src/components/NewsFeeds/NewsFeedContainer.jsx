@@ -1,6 +1,6 @@
 import FeaturedNews from "./FeaturedNews"; 
 
-const NewsFeedContainer = () => { 
+const NewsFeedContainer = () => {  
   return (
     <main className="my-10 lg:my-14">
       <div className="container mx-auto grid grid-cols-12 gap-8">

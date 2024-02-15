@@ -3,7 +3,7 @@ import SubscribeModal from "./SubscribeModal";
 import { ToastContainer } from "react-toastify";
 
 const Subscribe = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); 
   return (
     <>
       <div className="col-span-12 mt-10 flex items-start gap-4 xl:col-span-5 xl:mt-0">

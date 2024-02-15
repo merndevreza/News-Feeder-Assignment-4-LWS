@@ -3,7 +3,7 @@ import Copyright from "./Copyright";
 import Navigation from "./Navigation";
 import SocialLinks from "./SocialLinks";
 import Subscribe from "./Subscribe";
-const Footer = () => {
+const Footer = () => { 
   return (
     <footer className="bg-neutral-800 pt-20 text-white sm:pt-24">
       <div className="container mx-auto">

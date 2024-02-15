@@ -1,17 +1,15 @@
 import Page from "./Page";
-import { NewsDataProvider, SearchProvider } from "./providers";
+import { NewsDataProvider } from "./providers";
 import ThemeProvider from "./providers/ThemeProvider";
 
 function App() {
   return (
     <>
-      <NewsDataProvider>
-        <SearchProvider>
+        <NewsDataProvider>
           <ThemeProvider>
             <Page />
           </ThemeProvider>
-        </SearchProvider>
-      </NewsDataProvider>
+        </NewsDataProvider>
     </>
   );
 }

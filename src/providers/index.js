@@ -1,4 +1,3 @@
-import NewsDataProvider from "./NewsDataProvider"
-import SearchProvider from "./SearchProvider"
+import NewsDataProvider from "./NewsDataProvider" 
 
-export{NewsDataProvider,SearchProvider}
+export{NewsDataProvider}

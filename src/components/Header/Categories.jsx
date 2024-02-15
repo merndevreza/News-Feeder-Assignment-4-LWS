@@ -2,9 +2,13 @@ import { useContext } from "react";
 import { NewsContext } from "../../contexts";
 
 const Categories = () => {
-  const { setCategory } = useContext(NewsContext);
-  const handleCategory = (category) => {
-    setCategory(category);
+  const { setFetchData,fetchData } = useContext(NewsContext);
+  const handleCategory = (keyword) => {
+    setFetchData({
+      ...fetchData,
+      type:"categoryFilter",
+      keyword:keyword
+    });
   };
   return (
     <nav className=" mt-6 bg-slate-100 dark:bg-slate-950">

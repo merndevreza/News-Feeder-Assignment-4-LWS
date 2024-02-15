@@ -1,8 +1,8 @@
 
-const SocialLinks = () => {
+const SocialLinks = () => { 
    return (
       <div className="flex space-x-6">
-              <a>
+              <a href="#">
                 <svg
                   className="h-6 w-6"
                   fill="currentColor"
