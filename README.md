@@ -1,8 +1,8 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# News Feeder
+## Modifications to improve user experience 
+- Fixed the alignment issue of the Logo
+- Added a Theme toggler
+- Created the Header more attractive by adding a background color in categories and matching icon colors.
+- Added Loading Spinner when Data is fetching..
+- Added a Modal to show the content of a news
+- Added a Subscribe Modal in the Footer with Toastify success modal. 
