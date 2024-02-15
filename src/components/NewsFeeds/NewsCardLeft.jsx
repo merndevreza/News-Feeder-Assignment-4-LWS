@@ -16,8 +16,8 @@ const NewsCardLeft = ({ news, index }) => {
                   {title}
                 </h3>
               </a>
-              <p className="text-base text-[#5C5955]">{description}</p>
-              <p className="mt-5 text-base  text-[#5C5955]">
+              <p className="text-base text-[#5C5955] dark:text-[#959595]">{description}</p>
+              <p className="mt-5 text-base  text-[#5C5955] dark:text-[#959595]">
                 {getDate(publishedAt)}
               </p>
             </div>
@@ -25,7 +25,7 @@ const NewsCardLeft = ({ news, index }) => {
             {urlToImage && (
               <div className="col-span-12 lg:col-span-8">
                 <img className="w-full" src={urlToImage} alt="thumb" />
-                <p className="mt-5 text-base text-[#5C5955]">
+                <p className="mt-5 text-base text-[#5C5955] dark:text-[#959595]">
                   {author && `Illustration: ${author}`}
                 </p>
               </div>
@@ -33,7 +33,7 @@ const NewsCardLeft = ({ news, index }) => {
           </div>
           {isModalOpen && (
             <div className="fixed w-full h-screen left-0 top-0 bg-black bg-opacity-40">
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-5">
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-[#171923] dark:text-white p-5">
                 <NewsModal
                   key={title}
                   news={news}
@@ -53,8 +53,8 @@ const NewsCardLeft = ({ news, index }) => {
                   {title}
                 </h3>
               </a>
-              <p className="text-base text-[#5C5955]">{description}</p>
-              <p className="mt-5 text-base  text-[#5C5955]">
+              <p className="text-base text-[#5C5955] dark:text-[#959595]">{description}</p>
+              <p className="mt-5 text-base  text-[#5C5955] dark:text-[#959595]">
                 {getDate(publishedAt)}
               </p>
             </div>
@@ -64,7 +64,7 @@ const NewsCardLeft = ({ news, index }) => {
           </div>
           {isModalOpen && (
             <div className="fixed w-full h-screen left-0 top-0 bg-black bg-opacity-40">
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-5">
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-[#171923] dark:text-white p-5">
                 <NewsModal
                   key={title}
                   news={news}
@@ -82,15 +82,15 @@ const NewsCardLeft = ({ news, index }) => {
             <a className="cursor-pointer" onClick={() => setIsModalOpen(true)}>
               <h3 className="mb-2.5 text-xl font-bold lg:text-2xl">{title}</h3>
             </a>
-            <p className="text-base text-[#5C5955]">{description}</p>
-            <p className="mt-5 text-base text-[#5C5955]">
+            <p className="text-base text-[#5C5955] dark:text-[#959595]">{description}</p>
+            <p className="mt-5 text-base text-[#5C5955] dark:text-[#959595]">
               {getDate(publishedAt)}
             </p>
           </div>
         </div>
         {isModalOpen && (
             <div className="fixed w-full h-screen left-0 top-0 bg-black bg-opacity-40">
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-5">
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-[#171923] dark:text-white p-5">
                 <NewsModal
                   key={title}
                   news={news}

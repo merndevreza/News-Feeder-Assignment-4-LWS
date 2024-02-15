@@ -8,11 +8,11 @@ const NewsModal = ({ news, setIsModalOpen }) => {
       <h2 className="mb-2.5 text-xl font-bold lg:text-[20px] mt-5">
         <a href={url}>{title}</a>
       </h2>
-      <p className="text-md text-[#5C5955]">{content}</p>
-      {author&&<p className="mt-2 text-base text-[#5C5955]">
+      <p className="text-md text-[#5C5955] dark:text-[#959595]">{content}</p>
+      {author&&<p className="mt-2 text-base text-[#5C5955] dark:text-[#959595]">
         Reporter: {author}
       </p>}
-      <p className="mb-5 text-base text-[#5C5955] font-bold">{getDate(publishedAt)}</p>
+      <p className="mb-5 text-base text-[#5C5955] dark:text-[#959595] font-bold">{getDate(publishedAt)}</p>
       <button
         onClick={() => setIsModalOpen(false)}
         className="px-4 py-2 bg-primary  rounded"

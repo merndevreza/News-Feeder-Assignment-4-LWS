@@ -2,18 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
   font-family: "Fira Sans";
   src: url("fonts/fira/eot/FiraSans-Italic.eot");
-  src:
-      url("fonts/fira/eot/FiraSans-Italic.eot")
-          format("embedded-opentype"),
-      url("fonts/fira/woff2/FiraSans-Italic.woff2")
-          format("woff2"),
-      url("fonts/fira/woff/FiraSans-Italic.woff") format("woff"),
-      url("fonts/fira/woff2/FiraSans-Italic.ttf")
-          format("truetype");
+  src: url("fonts/fira/eot/FiraSans-Italic.eot") format("embedded-opentype"),
+    url("fonts/fira/woff2/FiraSans-Italic.woff2") format("woff2"),
+    url("fonts/fira/woff/FiraSans-Italic.woff") format("woff"),
+    url("fonts/fira/woff2/FiraSans-Italic.ttf") format("truetype");
   font-weight: normal;
   font-style: italic;
 } /* TT Commons */
@@ -36,9 +31,7 @@
   font-style: normal;
 }
 body {
-  font-family:
-      TT Commons,
-      "sans-serif";
+  font-family: TT Commons, "sans-serif";
 }
 h1,
 h2,
@@ -46,9 +39,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family:
-      Publico Headline Web,
-      "serif";
+  font-family: Publico Headline Web, "serif";
   line-height: 110%;
 }
 a {
@@ -59,4 +50,7 @@ a:hover {
 }
 .container {
   padding: 0 1rem;
+}
+.dark {
+  @apply bg-[#171923] text-[#ddd];
 }

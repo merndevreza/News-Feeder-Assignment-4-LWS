@@ -21,7 +21,7 @@ const FeaturedNews = () => {
       </div>
 
       <div className="col-span-12 self-start xl:col-span-4">
-        <div className="space-y-6 divide-y-2 divide-[#D5D1C9]">
+        <div className="space-y-6 divide-y-2 divide-[#D5D1C9] dark:divide-[#89898a]">
           {rightPart.map((news, index) => (
             <NewsCardRight
               key={news.title}

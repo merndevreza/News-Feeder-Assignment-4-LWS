@@ -7,8 +7,8 @@ const Categories = () => {
     setCategory(category);
   };
   return (
-    <nav className=" mt-6 bg-slate-100">
-      <ul className="flex flex-wrap items-center justify-center gap-5 text-xs font-semibold lg:text-base py-3 ">
+    <nav className=" mt-6 bg-slate-100 dark:bg-slate-950">
+      <ul className="flex flex-wrap items-center justify-center gap-5 text-xs font-semibold lg:text-base py-3">
         <li>
           <a onClick={() => handleCategory("general")} href="#">
             General
