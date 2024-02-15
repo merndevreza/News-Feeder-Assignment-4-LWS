@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { NewsContext } from "../../contexts";
 import NewsCardLeft from "./NewsCardLeft";
 import NewsCardRight from "./NewsCardRight";
-
+import searchEmptyImg from "../../assets/search-empty.jpg"
 const FeaturedNews = () => {
   const { newsData } = useContext(NewsContext);
   let numberOfRow = 0;
@@ -21,7 +21,9 @@ const FeaturedNews = () => {
   return (
     <>
       {newsData.length <1 ? (
-        <p>No Data Found</p>
+        <div className="col-span-12 text-center w-full">
+          <img className="w-[400px] mx-auto" src={searchEmptyImg} alt="Search empty" />
+          <p className="text-2xl">No News Found</p></div>
       ) : (
         <>
           <div className="col-span-12 grid grid-cols-12 gap-6 self-start xl:col-span-8">

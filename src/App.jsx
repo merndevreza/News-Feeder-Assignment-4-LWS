@@ -5,11 +5,11 @@ import ThemeProvider from "./providers/ThemeProvider";
 function App() {
   return (
     <>
-        <NewsDataProvider>
-          <ThemeProvider>
-            <Page />
-          </ThemeProvider>
-        </NewsDataProvider>
+      <NewsDataProvider>
+        <ThemeProvider>
+          <Page />
+        </ThemeProvider>
+      </NewsDataProvider>
     </>
   );
 }
