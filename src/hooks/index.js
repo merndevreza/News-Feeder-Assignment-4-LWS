@@ -1,3 +1,3 @@
 import useDebounce from "./useDebounce";
-import useNewsData from "./useNewsData"; 
-export {useNewsData,useDebounce}
+import useNewsQuery  from "./useNewsQuery"; 
+export {useNewsQuery ,useDebounce}

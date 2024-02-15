@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import getFilteredData from "../utils/getFilteredData";
 
-const useNewsData = (request) => { 
+const useNewsQuery = (request) => { 
   const [newsData, setNewsData] = useState([]);
   const [loading, setLoading] = useState({
     state: false,
@@ -19,7 +19,7 @@ const useNewsData = (request) => {
       if (type==="categoryFilter") {
         
       const response = await fetch(
-        `http://localhost:8000/v2/top-headlines?category=${keyword}`
+        `http://localhost:8000/v2/top-headlines${keyword&&`?category=${keyword}`}`
       );
       if (!response.ok) {
         const errorMessage = `Failed to Fetch Data: ${response.status}`;
@@ -63,4 +63,4 @@ const useNewsData = (request) => {
     error,
   };
 };
-export default useNewsData;
+export default useNewsQuery;

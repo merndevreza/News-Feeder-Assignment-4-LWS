@@ -18,7 +18,7 @@ const Search = () => {
       setFetchData({
         ...fetchData,
         type:"categoryFilter",
-        keyword:keyword
+        keyword:""
       });
     }
   }, 500);

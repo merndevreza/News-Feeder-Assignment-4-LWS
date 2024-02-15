@@ -1,13 +1,13 @@
 import {useState } from "react";
 import { NewsContext} from "../contexts";
-import { useNewsData } from "../hooks";
+import { useNewsQuery } from "../hooks";
 
 const NewsDataProvider = ({ children }) => {
   const [fetchData, setFetchData] = useState({
     type:"categoryFilter",
-    keyword:"general"
+    keyword:""
   });
-  const { newsData, loading, error } = useNewsData(fetchData);
+  const { newsData, loading, error } = useNewsQuery(fetchData);
 
   return (
     <NewsContext.Provider
