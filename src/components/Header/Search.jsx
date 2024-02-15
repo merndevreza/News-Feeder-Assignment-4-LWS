@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import searchIcon from "../../assets/icons/search.svg";
 import crossIcon from "../../assets/icons/x.svg";
-import useDebounce from "../../hooks/useDebounce";
+import { useDebounce } from "../../hooks";
+import { SearchContext } from "../../contexts";
 const Search = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { fetchSearchedData } = useContext(SearchContext);
 
   const doSearch = useDebounce((value) => {
-    console.log(value);
+    fetchSearchedData(value);
   }, 500);
 
   const handleSearch = (e) => {

@@ -1,12 +1,14 @@
-import Page from "./Page"; 
-import { NewsDataProvider } from "./providers";
+import Page from "./Page";
+import { NewsDataProvider, SearchProvider } from "./providers";
 
 function App() {
   return (
     <>
-    <NewsDataProvider>
-      <Page />
-    </NewsDataProvider>
+      <NewsDataProvider>
+        <SearchProvider>
+          <Page />
+        </SearchProvider>
+      </NewsDataProvider>
     </>
   );
 }

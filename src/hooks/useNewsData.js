@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import getFilteredData from "../utils/getFilteredData";
+import { SearchContext } from "../contexts";
 
 const useNewsData = (category) => {
   const [newsData, setNewsData] = useState([]);
@@ -23,17 +25,7 @@ const useNewsData = (category) => {
         throw new Error(errorMessage);
       }
       const data = await response.json();
-
-      //shortByDate(latest first)
-      let sortByDate = [...data.articles];
-      sortByDate.sort(
-        (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
-      );
-      //News that have content and a image will be at first
-      let newsAtFirst=sortByDate.filter((item)=>item.content && item.urlToImage)
-      //News that don't have content or a image will be at last
-      let newsAtLast=sortByDate.filter((item)=>!(item.content || item.urlToImage))
-      setNewsData([...newsAtFirst,...newsAtLast]);
+      setNewsData(getFilteredData(data.articles));
     } catch (error) {
       setError(error.message);
     } finally {
@@ -44,6 +36,7 @@ const useNewsData = (category) => {
       });
     }
   };
+
   useEffect(() => {
     setLoading({
       state: true,
@@ -51,8 +44,11 @@ const useNewsData = (category) => {
     });
     fetchNewsData(category);
   }, [category]);
+  //Set searched Data in the newsData
+  const { searchedData } = useContext(SearchContext); 
   return {
     newsData,
+    setNewsData,
     loading,
     error,
   };

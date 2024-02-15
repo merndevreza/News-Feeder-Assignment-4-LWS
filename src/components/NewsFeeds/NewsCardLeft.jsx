@@ -1,70 +1,105 @@
-import getDate from "../../utils/getDate"; 
+import { useState } from "react";
+import getDate from "../../utils/getDate";
+import NewsModal from "./NewsModal";
 
 const NewsCardLeft = ({ news, index }) => {
-  const { author, url, title, description, urlToImage, publishedAt,content } =
-    news;
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { author, title, description, urlToImage, publishedAt } = news;
   return (
     <>
       {index === 0 && (
-        <div className="col-span-12 grid grid-cols-12 gap-4">
-          <div className="col-span-12 lg:col-span-4">
-            <a href={url}>
-              <h3 className="mb-2.5 text-2xl font-bold lg:text-[28px]">
-                {title}
-              </h3>
-            </a>
-            <p className="text-base text-[#5C5955]">
-            {content}
-            </p>
-            <p className="mt-5 text-base  text-[#5C5955]"> 
-              {getDate(publishedAt)}
-            </p>
-          </div>
-
-          {urlToImage && (
-            <div className="col-span-12 lg:col-span-8">
-              <img className="w-full" src={urlToImage} alt="thumb" />
-              <p className="mt-5 text-base text-[#5C5955]">
-                {author && `Illustration: ${author}`}
+        <>
+          <div className="col-span-12 grid grid-cols-12 gap-4">
+            <div className="col-span-12 lg:col-span-4">
+              <a className="cursor-pointer"  onClick={() => setIsModalOpen(true)}>
+                <h3 className="mb-2.5 text-2xl font-bold lg:text-[28px]">
+                  {title}
+                </h3>
+              </a>
+              <p className="text-base text-[#5C5955]">{description}</p>
+              <p className="mt-5 text-base  text-[#5C5955]">
+                {getDate(publishedAt)}
               </p>
             </div>
+
+            {urlToImage && (
+              <div className="col-span-12 lg:col-span-8">
+                <img className="w-full" src={urlToImage} alt="thumb" />
+                <p className="mt-5 text-base text-[#5C5955]">
+                  {author && `Illustration: ${author}`}
+                </p>
+              </div>
+            )}
+          </div>
+          {isModalOpen && (
+            <div className="fixed w-full h-screen left-0 top-0 bg-black bg-opacity-40">
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-5">
+                <NewsModal
+                  key={title}
+                  news={news}
+                  setIsModalOpen={setIsModalOpen}
+                />
+              </div>
+            </div>
           )}
-        </div>
+        </>
       )}
       {index === 1 && (
-        <div className="col-span-12 grid grid-cols-12 gap-4 lg:col-span-8">
-          <div className="col-span-12 md:col-span-6">
-            <a href={url}>
-              <h3 className="mb-2.5 text-xl font-bold lg:text-2xl">
-                {title}
-              </h3>
-            </a>
-            <p className="text-base text-[#5C5955]">{description}
-            </p>
-            <p className="mt-5 text-base  text-[#5C5955]"> 
-              {getDate(publishedAt)}
-            </p>
+        <>
+          <div className="col-span-12 grid grid-cols-12 gap-4 lg:col-span-8">
+            <div className="col-span-12 md:col-span-6">
+              <a className="cursor-pointer"   onClick={() => setIsModalOpen(true)}>
+                <h3 className="mb-2.5 text-xl font-bold lg:text-2xl">
+                  {title}
+                </h3>
+              </a>
+              <p className="text-base text-[#5C5955]">{description}</p>
+              <p className="mt-5 text-base  text-[#5C5955]">
+                {getDate(publishedAt)}
+              </p>
+            </div>
+            <div className="col-span-12 md:col-span-6">
+              <img className="w-full" src={urlToImage} alt="thumb" />
+            </div>
           </div>
-          <div className="col-span-12 md:col-span-6">
-            <img className="w-full" src={urlToImage} alt="thumb" />
-          </div>
-        </div>
+          {isModalOpen && (
+            <div className="fixed w-full h-screen left-0 top-0 bg-black bg-opacity-40">
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-5">
+                <NewsModal
+                  key={title}
+                  news={news}
+                  setIsModalOpen={setIsModalOpen}
+                />
+              </div>
+            </div>
+          )}
+        </>
       )}
       {index > 1 && (
+        <>
         <div className="col-span-12 md:col-span-6 lg:col-span-4">
           <div className="col-span-12 md:col-span-4">
-            <a href={url}>
-              <h3 className="mb-2.5 text-xl font-bold lg:text-2xl">
-                {title}
-              </h3>
+            <a className="cursor-pointer" onClick={() => setIsModalOpen(true)}>
+              <h3 className="mb-2.5 text-xl font-bold lg:text-2xl">{title}</h3>
             </a>
-            <p className="text-base text-[#5C5955]">{description}
-            </p>
-            <p className="mt-5 text-base text-[#5C5955]"> 
+            <p className="text-base text-[#5C5955]">{description}</p>
+            <p className="mt-5 text-base text-[#5C5955]">
               {getDate(publishedAt)}
             </p>
           </div>
         </div>
+        {isModalOpen && (
+            <div className="fixed w-full h-screen left-0 top-0 bg-black bg-opacity-40">
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-5">
+                <NewsModal
+                  key={title}
+                  news={news}
+                  setIsModalOpen={setIsModalOpen}
+                />
+              </div>
+            </div>
+          )}
+        </>
       )}
     </>
   );
